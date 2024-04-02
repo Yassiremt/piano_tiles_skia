@@ -58,7 +58,7 @@ const PianoTiles = (props: Props) => {
     }
   );
 
-  const panGesture = Gesture.Tap().onStart((e) => {
+  const tapGesture = Gesture.Tap().onStart((e) => {
     const tappedPoint = e.x;
 
     const selectedTileIndex = tiles.findIndex((position, index) => {
@@ -97,7 +97,7 @@ const PianoTiles = (props: Props) => {
   };
   return (
     <>
-      <GestureDetector gesture={panGesture}>
+      <GestureDetector gesture={tapGesture}>
         <Canvas style={{ flex: 1 }}>
           <Background />
           <Separators />
@@ -119,7 +119,7 @@ const PianoTiles = (props: Props) => {
         score={pressedItems.value.length.toString()}
         modalVisible={restartModalVisible}
         onRestart={onGameRestart}
-        didPlayerWon={pressedItems.value.length === happyBirthday.length}
+        didPlayerWin={pressedItems.value.length === happyBirthday.length}
       />
     </>
   );

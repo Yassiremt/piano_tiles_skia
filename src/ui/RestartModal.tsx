@@ -12,14 +12,14 @@ type Props = {
   score: string;
   modalVisible: boolean;
   onRestart: () => void;
-  didPlayerWon: boolean;
+  didPlayerWin: boolean;
 };
 
 const RestartModal = ({
   score,
   modalVisible,
   onRestart,
-  didPlayerWon,
+  didPlayerWin,
 }: Props) => {
   const { width } = useWindowDimensions();
   const cardWidth = width - 80;
@@ -45,7 +45,7 @@ const RestartModal = ({
             ]}
           >
             <Text style={styles.textStyle}>
-              {didPlayerWon ? `Congratulation 🎉` : "You lost 😞"}
+              {didPlayerWin ? `Congratulation 🎉` : "You lost 😞"}
             </Text>
             <Text
               style={styles.textStyle}
